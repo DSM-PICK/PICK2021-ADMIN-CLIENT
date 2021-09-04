@@ -33,7 +33,7 @@ export const Inter = styled.label<{on: boolean}>`
   position: absolute;
   top: 10px;
   left: 25px;
-  transition: all 0.5s;
+  transition: all 0.35s;
   transform: translateY(15%);
   font-size: 18px;
   font-family: "Noto Sans KR", sans-serif;
@@ -55,6 +55,7 @@ export const LoginInput = styled.input`
   padding: 35px 25px 15px 25px;
   font-size: 18px;
   border: 1px solid ${color.grey};
+  outline: ${color.grey};
   &:focus + ${Inter} {
     top: 10px;
     transform: translateY(-15%);
@@ -65,7 +66,7 @@ export const LoginInput = styled.input`
 `;
 
 export const Loginbutton = styled.button`
-  background-color: ${color.oragne};
+  background-color: ${color.orange};
   width: 362px;
   height: 64px;
   font-size: 22px;
