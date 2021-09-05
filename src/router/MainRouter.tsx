@@ -3,15 +3,19 @@ import { Route, Switch } from 'react-router-dom';
 import { 
     Header,
     Login,
+    SideBar,
  } from '../components';
 
 const MainRouter = () => {
   return (
     <>
-        <Header />
-        <Switch>
-            <Route path='/login' component={Login} exact/>
-        </Switch>
+        <div>
+            <SideBar />
+            <Header />
+            <Switch>
+                <Route path='/login' component={Login} exact/>
+            </Switch>
+        </div>
     </>
   );
 }
