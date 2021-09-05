@@ -6,7 +6,7 @@ const Header = () => {
   return (
     <>
         <S.HeaderWrapper >
-            <img src={PickLogo} />
+            <img src={PickLogo} alt="로고"/>
             <div>For Admin</div>
         </S.HeaderWrapper>
     </>

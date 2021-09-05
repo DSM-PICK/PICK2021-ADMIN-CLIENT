@@ -37,7 +37,7 @@ export const Inter = styled.label<{on: boolean}>`
   transform: translateY(15%);
   font-size: 18px;
   font-family: "Noto Sans KR", sans-serif;
-  color: ${color.grey};
+  color: ${color.gray2};
   cursor: text;
   ${(props) =>
     props.on === true &&
@@ -54,14 +54,14 @@ export const LoginInput = styled.input`
   height: 28px;
   padding: 35px 25px 15px 25px;
   font-size: 18px;
-  border: 1px solid ${color.grey};
-  outline: ${color.grey};
+  border: 1px solid ${color.gray2};
+  outline: ${color.gray2};
   &:focus + ${Inter} {
     top: 10px;
     transform: translateY(-15%);
     left: 25px;
     font-size: 14px;
-    color: ${color.grey};
+    color: ${color.gray2};
   }
 `;
 
