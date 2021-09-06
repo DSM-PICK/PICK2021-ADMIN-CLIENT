@@ -8,6 +8,12 @@ export const LoginRightWrapper = styled.div`
     padding: 36px;
     display: flex;
     flex-direction: column;
+    @media screen and (max-width: 1540px) { 
+        width: 500px;
+    }
+    @media screen and (max-width: 1340px) { 
+        width: 400px;
+    }
 `
 
 export const Title = styled.div`
