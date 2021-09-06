@@ -4,17 +4,21 @@ import {
     Header,
     Login,
     SideBar,
+    Home,
  } from '../components';
 
 const MainRouter = () => {
   return (
     <>
-        <div>
+        <div style={{display: "flex"}}>
             <SideBar />
-            <Header />
-            <Switch>
-                <Route path='/login' component={Login} exact/>
-            </Switch>
+            <div style={{flexDirection: "column", margin: "0 auto"}}>
+              <Header />
+              <Switch>
+                  <Route path='/login' component={Login} exact/>
+                  <Route path='/' component={Home} exact/>
+              </Switch>
+            </div>
         </div>
     </>
   );
