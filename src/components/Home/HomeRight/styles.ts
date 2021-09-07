@@ -12,3 +12,25 @@ export const HomeRightWrapper = styled.div`
         width: 500px;
     }
 `
+
+export const Title = styled.div`
+    font-family: Noto Sans KR;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 41px;
+    text-align: center;
+    margin-top: 30px;
+`
+
+export const NoData = styled.div`
+    font-family: Noto Sans KR;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 35px;
+    text-align: center;
+    position: relative;
+    top: 45%;
+    transform: translateY(-70%);
+`
