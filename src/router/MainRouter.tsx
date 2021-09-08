@@ -5,6 +5,7 @@ import {
     Login,
     SideBar,
     Home,
+    ClubList,
  } from '../components';
 
 const MainRouter = () => {
@@ -17,6 +18,7 @@ const MainRouter = () => {
               <Switch>
                   <Route path='/login' component={Login} exact/>
                   <Route path='/' component={Home} exact/>
+                  <Route path='/clublist' component={ClubList} exact/>
               </Switch>
             </div>
         </div>
