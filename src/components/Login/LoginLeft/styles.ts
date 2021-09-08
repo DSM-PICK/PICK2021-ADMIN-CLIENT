@@ -45,7 +45,7 @@ export const Inter = styled.label<{on: boolean}>`
       top: 10px;
       transform: translateY(-15%);
       left: 25px;
-      font-size: 16px;
+      font-size: 14px;
     `}
 `;
 
