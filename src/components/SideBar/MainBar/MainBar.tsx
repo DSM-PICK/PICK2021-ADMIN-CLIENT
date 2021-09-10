@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Club, ClubOrange, Home, HomeOrange, LogOut, Upload, UploadOrange } from '../../../assets';
 import * as S from './styles'
 
@@ -6,14 +7,18 @@ const MainBar = () => {
   return (
     <>
         <S.SideBarIconBox>
-            <img src={Home} alt="홈"/> 
-            {/* <img src={HomeOrange} alt="홈"/> */}
+            <Link to='/'>
+                <img src={Home} alt="홈"/> 
+                {/* <img src={HomeOrange} alt="홈"/> */}
+            </Link>
             <S.SideBarText>홈</S.SideBarText>
         </S.SideBarIconBox>
 
         <S.SideBarIconBox>
-            <img src={Club} alt="동아리"/>
-            {/* <img src={ClubOrange} alt="동아리"/> */}
+            <Link to="/clublist">
+                <img src={Club} alt="동아리"/>
+                {/* <img src={ClubOrange} alt="동아리"/> */}
+            </Link>
             <S.SideBarText>동아리</S.SideBarText>
         </S.SideBarIconBox>
 
