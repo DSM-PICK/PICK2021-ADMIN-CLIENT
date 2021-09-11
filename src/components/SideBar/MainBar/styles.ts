@@ -14,6 +14,9 @@ export const SideBarIconBox = styled.div`
         margin: 16px 24px;
         margin-bottom: 6px;
     }
+    a {
+        text-decoration: none;
+    }
 `
 
 export const SideBarIconBoxLast = styled.div`
