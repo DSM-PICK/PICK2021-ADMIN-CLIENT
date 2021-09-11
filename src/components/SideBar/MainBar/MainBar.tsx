@@ -10,22 +10,24 @@ const MainBar = () => {
             <Link to='/'>
                 <img src={Home} alt="홈"/> 
                 {/* <img src={HomeOrange} alt="홈"/> */}
+                <S.SideBarText>홈</S.SideBarText>
             </Link>
-            <S.SideBarText>홈</S.SideBarText>
         </S.SideBarIconBox>
 
         <S.SideBarIconBox>
             <Link to="/clublist">
                 <img src={Club} alt="동아리"/>
                 {/* <img src={ClubOrange} alt="동아리"/> */}
+                <S.SideBarText>동아리</S.SideBarText>
             </Link>
-            <S.SideBarText>동아리</S.SideBarText>
         </S.SideBarIconBox>
 
         <S.SideBarIconBox>
-            <img src={Upload} alt="업로드"/>
-            {/* <img src={UploadOrange} alt="업로드"/> */}
-            <S.SideBarText>데이터</S.SideBarText>
+            <Link to="/file-upload">
+                <img src={Upload} alt="업로드"/>
+                {/* <img src={UploadOrange} alt="업로드"/> */}
+                <S.SideBarText>데이터</S.SideBarText>
+            </Link>
         </S.SideBarIconBox>
 
         <S.SideBarIconBoxLast>
