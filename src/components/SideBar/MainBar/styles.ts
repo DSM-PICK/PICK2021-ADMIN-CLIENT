@@ -13,6 +13,7 @@ export const SideBarIconBox = styled.div`
         height: 30px;
         margin: 16px 24px;
         margin-bottom: 6px;
+        color: orange;
     }
     a {
         text-decoration: none;
