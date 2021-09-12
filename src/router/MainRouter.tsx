@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, useLocation } from 'react-router-dom';
 import { 
     Header,
     Login,
@@ -10,12 +10,18 @@ import {
  } from '../components';
 
 const MainRouter = () => {
+  const location = useLocation();
+
   return (
     <>
         <div style={{display: "flex"}}>
             <SideBar />
             <div style={{flexDirection: "column", margin: "0 auto"}}>
-              <Header />
+              {
+                location.pathname !== '/clubinfo' ?
+                <Header />
+                : <div/>
+              }
               <Switch>
                   <Route path='/login' component={Login} exact/>
                   <Route path='/' component={Home} exact/>
