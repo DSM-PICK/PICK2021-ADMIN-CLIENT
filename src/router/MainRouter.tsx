@@ -7,6 +7,7 @@ import {
     Home,
     ClubList,
     FileUpload,
+    ClubInfo,
  } from '../components';
 
 const MainRouter = () => {
@@ -27,6 +28,7 @@ const MainRouter = () => {
                   <Route path='/' component={Home} exact/>
                   <Route path='/clublist' component={ClubList} exact/>
                   <Route path='/file-upload' component={FileUpload} exact/>
+                  <Route path='/ClubInfo' component={ClubInfo} exact/>
               </Switch>
             </div>
         </div>

@@ -11,6 +11,7 @@ export const ClubCardWrapper = styled.div`
     flex-direction: column;
     justify-content: center;
     cursor: pointer;
+    color: black;
 `
 
 export const ClubDes = styled.div`
