@@ -1,13 +1,13 @@
 import styled from "@emotion/styled";
 import { color } from "../../../style/color";
 
-export const ClubBarWrapper = styled.div`
+export const AfterSchoolBarWrapper = styled.div`
     display: flex;
     justify-content: right;
     margin-bottom: 32px;
 `
 
-export const ClubAdd = styled.div`
+export const AfterSchoolAdd = styled.div`
     width: 123px;
     height: 50px;
     display: flex;
@@ -27,7 +27,7 @@ export const ClubAdd = styled.div`
     }
 `
 
-export const ClubSearch = styled.form`
+export const AfterSchoolSearch = styled.form`
     margin: 0 32px;
     width: 300px;
     height: 50px;
@@ -37,14 +37,14 @@ export const ClubSearch = styled.form`
     background-color: ${color.white};
 `
 
-export const ClubInput = styled.input`
+export const AfterSchoolInput = styled.input`
     width: 210px;
     font-size: 22px;
     outline: none;
     border: none;
 `
 
-export const ClubButton = styled.button`
+export const AfterSchoolButton = styled.button`
     border: none;
     background-color: ${color.white};
     img{
@@ -54,7 +54,7 @@ export const ClubButton = styled.button`
     }
 `
 
-export const ClubSort = styled.div`
+export const AfterSchoolSort = styled.div`
     width: 124px;
     height: 50px;
     background-color: ${color.white};

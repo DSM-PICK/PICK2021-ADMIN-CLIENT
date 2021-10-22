@@ -1,12 +1,12 @@
 import styled from '@emotion/styled'
 import { color } from '../../style/color'
 
-export const ClubListWrapper = styled.div`
+export const AfterSchoolListWrapper = styled.div`
     display: flex;
     flex-direction: column;
 `
 
-export const ClubList = styled.div`
+export const AfterSchoolList = styled.div`
     height: 70vh;
     overflow: auto;
     display: grid;
