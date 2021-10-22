@@ -1,20 +1,20 @@
 import styled from '@emotion/styled'
 import { color } from '../../../style/color'
 
-export const ClubNameWrapper = styled.div`
+export const AfterSchoolNameWrapper = styled.div`
     text-align: center;
 `
 
-export const ClubTitle = styled.div`
+export const AfterSchoolTitle = styled.div`
     font-family: Noto Sans KR;
     font-style: normal;
     font-weight: 500;
     font-size: 72px;
-    line-height: 104px;
+    line-height: 50px;
     margin-top: 100px;
 `
 
-export const ClubPlace = styled.div`
+export const AfterSchoolPlace = styled.div`
     font-family: Noto Sans KR;
     font-style: normal;
     font-weight: normal;

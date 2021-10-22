@@ -2,10 +2,10 @@ import React from 'react';
 import { Search } from '../../../assets';
 import * as S from './styles'
 
-const ClubSubBar = () => {
+const AfterSchoolSubBar = () => {
   return (
     <>
-        <S.ClubSubBarWrapper>
+        <S.AfterSchoolSubBarWrapper>
             <div>
                 <div>총원 : 18명</div>
                 <div>담당 : 정창용</div>
@@ -14,9 +14,9 @@ const ClubSubBar = () => {
                 <input placeholder="학번 또는 이름"/>
                 <img src={Search} alt='검색'/>
             </S.StudentSearch>
-        </S.ClubSubBarWrapper>
+        </S.AfterSchoolSubBarWrapper>
     </>
   );
 }
 
-export default ClubSubBar;
+export default AfterSchoolSubBar;

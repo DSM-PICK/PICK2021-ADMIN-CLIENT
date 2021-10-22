@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 import { color } from "../../../style/color";
 
-export const ClubCard = styled.div`
+export const AfterSchoolCard = styled.div`
     width: 280px;
     height: 100px;
     margin-bottom: 20px;
