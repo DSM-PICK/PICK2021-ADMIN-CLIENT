@@ -52,6 +52,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react-dom", "virtual:d4d9b87fa886dca897655597d9a7ed76fa8ed81379aef2cb0919dc846c351d0b88f8e7a2fe320e6e78ad3733796af03fa91383a7a82a9a1978a84edab794d001#npm:17.0.2"],
             ["react-router-dom", "virtual:d4d9b87fa886dca897655597d9a7ed76fa8ed81379aef2cb0919dc846c351d0b88f8e7a2fe320e6e78ad3733796af03fa91383a7a82a9a1978a84edab794d001#npm:5.3.0"],
             ["react-scripts", "virtual:d4d9b87fa886dca897655597d9a7ed76fa8ed81379aef2cb0919dc846c351d0b88f8e7a2fe320e6e78ad3733796af03fa91383a7a82a9a1978a84edab794d001#npm:4.0.3"],
+            ["recoil", "virtual:d4d9b87fa886dca897655597d9a7ed76fa8ed81379aef2cb0919dc846c351d0b88f8e7a2fe320e6e78ad3733796af03fa91383a7a82a9a1978a84edab794d001#npm:0.4.1"],
             ["typescript", "patch:typescript@npm%3A4.3.5#~builtin<compat/typescript>::version=4.3.5&hash=32657b"],
             ["web-vitals", "npm:1.1.2"]
           ],
@@ -11139,6 +11140,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
+      ["hamt_plus", [
+        ["npm:1.0.2", {
+          "packageLocation": "./.yarn/cache/hamt_plus-npm-1.0.2-67a52ee1df-af26ea32db.zip/node_modules/hamt_plus/",
+          "packageDependencies": [
+            ["hamt_plus", "npm:1.0.2"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
       ["handle-thing", [
         ["npm:2.0.1", {
           "packageLocation": "./.yarn/cache/handle-thing-npm-2.0.1-084baca59e-68071f3130.zip/node_modules/handle-thing/",
@@ -15255,6 +15265,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react-dom", "virtual:d4d9b87fa886dca897655597d9a7ed76fa8ed81379aef2cb0919dc846c351d0b88f8e7a2fe320e6e78ad3733796af03fa91383a7a82a9a1978a84edab794d001#npm:17.0.2"],
             ["react-router-dom", "virtual:d4d9b87fa886dca897655597d9a7ed76fa8ed81379aef2cb0919dc846c351d0b88f8e7a2fe320e6e78ad3733796af03fa91383a7a82a9a1978a84edab794d001#npm:5.3.0"],
             ["react-scripts", "virtual:d4d9b87fa886dca897655597d9a7ed76fa8ed81379aef2cb0919dc846c351d0b88f8e7a2fe320e6e78ad3733796af03fa91383a7a82a9a1978a84edab794d001#npm:4.0.3"],
+            ["recoil", "virtual:d4d9b87fa886dca897655597d9a7ed76fa8ed81379aef2cb0919dc846c351d0b88f8e7a2fe320e6e78ad3733796af03fa91383a7a82a9a1978a84edab794d001#npm:0.4.1"],
             ["typescript", "patch:typescript@npm%3A4.3.5#~builtin<compat/typescript>::version=4.3.5&hash=32657b"],
             ["web-vitals", "npm:1.1.2"]
           ],
@@ -17038,6 +17049,33 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [
             ["readdirp", "npm:3.5.0"],
             ["picomatch", "npm:2.2.2"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["recoil", [
+        ["npm:0.4.1", {
+          "packageLocation": "./.yarn/cache/recoil-npm-0.4.1-013a399a25-a11a93e516.zip/node_modules/recoil/",
+          "packageDependencies": [
+            ["recoil", "npm:0.4.1"]
+          ],
+          "linkType": "SOFT",
+        }],
+        ["virtual:d4d9b87fa886dca897655597d9a7ed76fa8ed81379aef2cb0919dc846c351d0b88f8e7a2fe320e6e78ad3733796af03fa91383a7a82a9a1978a84edab794d001#npm:0.4.1", {
+          "packageLocation": "./.yarn/__virtual__/recoil-virtual-60404a501f/0/cache/recoil-npm-0.4.1-013a399a25-a11a93e516.zip/node_modules/recoil/",
+          "packageDependencies": [
+            ["recoil", "virtual:d4d9b87fa886dca897655597d9a7ed76fa8ed81379aef2cb0919dc846c351d0b88f8e7a2fe320e6e78ad3733796af03fa91383a7a82a9a1978a84edab794d001#npm:0.4.1"],
+            ["@types/react", "npm:17.0.19"],
+            ["hamt_plus", "npm:1.0.2"],
+            ["react", "npm:17.0.2"],
+            ["react-dom", "virtual:d4d9b87fa886dca897655597d9a7ed76fa8ed81379aef2cb0919dc846c351d0b88f8e7a2fe320e6e78ad3733796af03fa91383a7a82a9a1978a84edab794d001#npm:17.0.2"],
+            ["react-native", null]
+          ],
+          "packagePeers": [
+            "@types/react",
+            "react-dom",
+            "react-native",
+            "react"
           ],
           "linkType": "HARD",
         }]
