@@ -13,24 +13,22 @@ const MainBar:FC<Props> = ({url}) => {
   return (
     <>
         <S.SideBarIconBox>
-            <Link to='/'>
-                <img src={url === '/' ? HomeOrange : Home} alt="홈"/> 
-                <S.SideBarText>홈</S.SideBarText>
+            <Link to="/marjor-list">
+                <img src={url === '/major-list' ? ClubOrange : Club} alt="동아리"/>
+                <S.SideBarText>동아리</S.SideBarText>
             </Link>
         </S.SideBarIconBox>
 
         <S.SideBarIconBox>
-            <Link to="/clublist">
-                <img src={url === '/clublist' ? ClubOrange : Club} alt="동아리"/>
-                {/* <img src={ClubOrange} alt="동아리"/> */}
-                <S.SideBarText>동아리</S.SideBarText>
+            <Link to="/activity-list">
+                <img src={url === '/activity-list' ? ClubOrange : Club} alt="동아리"/>
+                <S.SideBarText>방과후</S.SideBarText>
             </Link>
         </S.SideBarIconBox>
 
         <S.SideBarIconBox>
             <Link to="/file-upload">
                 <img src={url === '/file-upload' ? UploadOrange : Upload} alt="업로드"/>
-                {/* <img src={UploadOrange} alt="업로드"/> */}
                 <S.SideBarText>데이터</S.SideBarText>
             </Link>
         </S.SideBarIconBox>
