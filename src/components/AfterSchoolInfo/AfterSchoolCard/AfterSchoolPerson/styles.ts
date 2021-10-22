@@ -1,6 +1,6 @@
 import styled from '@emotion/styled'
 
-export const ClubPersonWrapper = styled.div`
+export const AfterSchoolPersonWrapper = styled.div`
     img{
         width: 26px;
         height: 26px;

@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { useState } from 'react';
 import { Crown } from '../../../assets';
-import ClubPerson from './ClubPerson/ClubPerson';
+import AfterSchoolPerson from './AfterSchoolPerson/AfterSchoolPerson';
 import PersonSet from './PersonSet/PersonSet';
 import * as S from './styles'
 
@@ -9,21 +9,21 @@ interface Props{
   index: number
 }
 
-const ClubCard: FC<Props> = ({index}) => {
+const AfterSchoolCard: FC<Props> = ({index}) => {
   const [ click, setClick] = useState<boolean>(false)
 
   return (
     <>
-        <S.ClubCard>
+        <S.AfterSchoolCard>
           {
             click === true ?
-            <ClubPerson index={index}/>
+            <AfterSchoolPerson index={index}/>
             : <PersonSet index={index} />
           }
             
-        </S.ClubCard>
+        </S.AfterSchoolCard>
     </>
   );
 }
 
-export default ClubCard;
+export default AfterSchoolCard;

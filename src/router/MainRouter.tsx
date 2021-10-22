@@ -5,9 +5,9 @@ import {
     Login,
     SideBar,
     Home,
-    ClubList,
+    AfterSchoolList,
     FileUpload,
-    ClubInfo,
+    AfterSchoolInfo,
  } from '../components';
 
 const MainRouter = () => {
@@ -19,16 +19,18 @@ const MainRouter = () => {
             <SideBar />
             <div style={{flexDirection: "column", margin: "0 auto"}}>
               {
-                location.pathname !== '/clubinfo' ?
-                <Header />
+                location.pathname.split('-')[1] !== 'info' ?
+                <Header /> 
                 : <div/>
               }
               <Switch>
-                  <Route path='/login' component={Login} exact/>
                   <Route path='/' component={Home} exact/>
-                  <Route path='/clublist' component={ClubList} exact/>
+                  <Route path='/login' component={Login} exact/>
+                  <Route path='/major-list' component={AfterSchoolList} exact/>
+                  <Route path='/activity-list' component={AfterSchoolList} exact/>
                   <Route path='/file-upload' component={FileUpload} exact/>
-                  <Route path='/ClubInfo' component={ClubInfo} exact/>
+                  <Route path='/major-info' component={AfterSchoolInfo} exact/>
+                  <Route path='/activity-info' component={AfterSchoolInfo} exact/>
               </Switch>
             </div>
         </div>

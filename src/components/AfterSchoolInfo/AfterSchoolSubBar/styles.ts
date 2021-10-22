@@ -1,7 +1,7 @@
 import styled from '@emotion/styled'
 import { color } from '../../../style/color'
 
-export const ClubSubBarWrapper = styled.div`
+export const AfterSchoolSubBarWrapper = styled.div`
     width: 1300px;
     margin: 0 auto;
     display: flex;

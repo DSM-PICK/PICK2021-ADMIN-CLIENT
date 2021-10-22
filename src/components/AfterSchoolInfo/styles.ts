@@ -1,7 +1,7 @@
 import styled from '@emotion/styled'
 
 export const CardWrapper = styled.div`
-    height: 500px;
+    height: 480px;
     overflow: auto;
     display: grid;
     justify-content: center;

@@ -1,7 +1,7 @@
 import styled from '@emotion/styled'
 import { color } from '../../../style/color'
 
-export const ClubCardWrapper = styled.div`
+export const AfterSchoolCardWrapper = styled.div`
     width: 360px;
     height: 200px;
     background-color: ${color.white};
@@ -14,7 +14,7 @@ export const ClubCardWrapper = styled.div`
     color: black;
 `
 
-export const ClubDes = styled.div`
+export const AfterSchoolDes = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
@@ -28,14 +28,14 @@ export const Line = styled.div`
     background-color: ${color.gray2};
 `
 
-export const ClubName = styled.div`
+export const AfterSchoolName = styled.div`
     font-family: Noto Sans KR;
     font-style: normal;
     font-size: 40px;
     text-align: center;
 `
 
-export const ClubInfo = styled.div`
+export const AfterSchoolInfo = styled.div`
     font-family: Noto Sans KR;
     font-style: normal;
     font-size: 24px;

@@ -7,18 +7,18 @@ interface Props {
     index: number
 }
 
-const ClubPerson: FC<Props> = ({index}) => {
+const AfterSchoolPerson: FC<Props> = ({index}) => {
   return (
     <>
-        <S.ClubPersonWrapper>
+        <S.AfterSchoolPersonWrapper>
             {
               index === 0 &&
               <img src={Crown} alt="동아리장" />
             }
             <div>2121 한준호</div>
-        </S.ClubPersonWrapper>
+        </S.AfterSchoolPersonWrapper>
     </>
   );
 }
 
-export default ClubPerson;
+export default AfterSchoolPerson;
