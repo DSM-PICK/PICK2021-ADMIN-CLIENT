@@ -14,7 +14,7 @@ const SideBar = () => {
         location.pathname !== '/login' ?
         <S.SideBarWrapper >
           {
-            location.pathname === '/clubinfo' ?
+            location.pathname === '/major-info' || location.pathname === '/activity-info' ?
             <EditBar />
             : <MainBar url={location.pathname}/>
           }
