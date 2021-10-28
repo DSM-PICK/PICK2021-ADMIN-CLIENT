@@ -18,21 +18,20 @@ export const SideBarIconBox = styled.div`
     a {
         text-decoration: none;
     }
-`
-
-export const SideBarIconBoxLast = styled.div`
-    position: absolute;
-    top: 100%;
-    transform: translateY(-120%);
-    cursor: pointer;
-    img {
-        width: 30px;
-        height: 30px;
-        margin: 16px 24px;
-        margin-bottom: 6px;
-    }
-    div{
-        color: ${color.red};
+    :nth-last-of-type(1) {
+        position: absolute;
+        top: 100%;
+        transform: translateY(-120%);
+        cursor: pointer;
+        img {
+            width: 30px;
+            height: 30px;
+            margin: 16px 24px;
+            margin-bottom: 6px;
+        }
+        div{
+            color: ${color.red};
+        }
     }
 `
 
