@@ -5,3 +5,4 @@ export { default as Home } from './Home/Home';
 export { default as AfterSchoolList } from './AfterSchoolList/AfterSchoolList';
 export { default as FileUpload } from './FileUpload/FileUpload'
 export { default as AfterSchoolInfo } from './AfterSchoolInfo/AfterSchoolInfo'
+export { default as AccountManagement } from './AccountManagement/AccountManagement'
