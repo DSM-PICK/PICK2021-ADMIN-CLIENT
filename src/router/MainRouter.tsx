@@ -8,6 +8,8 @@ import {
     AfterSchoolList,
     FileUpload,
     AfterSchoolInfo,
+    AfterSchoolAdd,
+    AccountManagement,
  } from '../components';
 
 const MainRouter = () => {
@@ -19,18 +21,16 @@ const MainRouter = () => {
             <SideBar />
             <div style={{flexDirection: "column", margin: "0 auto"}}>
               {
-                location.pathname.split('-')[1] !== 'info' ?
-                <Header /> 
-                : <div/>
+                location.pathname.split('/')[1] !== "as-info" && <Header />
               }
               <Switch>
                   <Route path='/' component={Home} exact/>
                   <Route path='/login' component={Login} exact/>
-                  <Route path='/major-list' component={AfterSchoolList} exact/>
-                  <Route path='/activity-list' component={AfterSchoolList} exact/>
+                  <Route path='/as-list/:type' component={AfterSchoolList} exact/>
                   <Route path='/file-upload' component={FileUpload} exact/>
-                  <Route path='/major-info' component={AfterSchoolInfo} exact/>
-                  <Route path='/activity-info' component={AfterSchoolInfo} exact/>
+                  <Route path='/as-info/:type/:id' component={AfterSchoolInfo} exact/>
+                  <Route path='/add-after-school' component={AfterSchoolAdd} exact />
+                  <Route path='/account' component={AccountManagement} exact />
               </Switch>
             </div>
         </div>

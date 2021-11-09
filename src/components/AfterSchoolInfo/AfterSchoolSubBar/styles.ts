@@ -2,7 +2,7 @@ import styled from '@emotion/styled'
 import { color } from '../../../style/color'
 
 export const AfterSchoolSubBarWrapper = styled.div`
-    width: 1300px;
+    width: 1200px;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;

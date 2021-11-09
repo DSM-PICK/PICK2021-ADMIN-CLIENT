@@ -1,35 +1,50 @@
-import { Link } from 'react-router-dom';
+import { Link, RouteComponentProps, useHistory } from 'react-router-dom';
 import AfterSchoolBar from './AfterSchoolBar/AfterSchoolBar';
 import AfterSchoolCard from './Card/Card';
-import * as S from './styles'
 import { useEffect } from 'react';
 import { useState } from 'react';
+import * as S from './styles'
+import ClubMove from '../Container/Modal/AfterSchoolMove/AfterSchoolMove';
+import { useRecoilState } from 'recoil';
+import { asMoveState } from '../../recoil/asMoveState';
 
-const AfterSchoolList = ({location} : any) => {
+const AfterSchoolList = ({ location, match } : RouteComponentProps<{type: string}>) => {
   const [ path, setPath ] = useState<string>('');
+  const [ data, setData ] = useRecoilState(asMoveState)
+  const type = match.params.type;
+
+  const history = useHistory()
 
   useEffect(() => {
     setPath(location.pathname.split('-')[0])
   }, [location])
 
-  console.log(path)
+  const onGoAfterSchool = (index: number) => {
+    !data.isChange ?
+    history.push(`/as-info/${type}/${index}`)
+    : setData({...data, afterAsId: index, afterAsName: 'pick'})
+  }  
 
   return (
     <>
         <S.AfterSchoolListWrapper>
             <AfterSchoolBar />
-            <S.AfterSchoolList>
+            <S.AfterSchoolListBox>
                 {
-                    Array(20).fill(-1).map((_, index) => {
+                    Array(19).fill(-1).map((_, index) => {
                     return (
-                      <Link to={`${path}-info?id=${index}`}>
-                        <AfterSchoolCard key={index}/>
-                      </Link>
+                      <div onClick={() => onGoAfterSchool(index)} key={index}>
+                        <AfterSchoolCard/>
+                      </div>
                     )
                     
                   })
                 }
-            </S.AfterSchoolList>
+            </S.AfterSchoolListBox>
+            {
+              data.isChange===true && data.type === 'major' &&
+              <ClubMove />
+            }
         </S.AfterSchoolListWrapper>
     </>
   );

@@ -11,7 +11,7 @@ assignees: ''
 
 > description
 
-## issue 종류
+## pr 종류
 
 - [ ] 기능추가
 - [ ] 버그수정

@@ -1,9 +1,29 @@
 import React, { useState } from 'react';
+import { useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
+import { useRecoilState, useRecoilValue, useSetRecoilState } from 'recoil';
+import majorApi from '../../../libs/api/major/majorApi';
+import teacherApi from '../../../libs/api/teacher/teacherApi';
+import { majorListSelector, majorListState } from '../../../recoil/majorState';
 import * as S from './styles'
 
 const LoginLeft = () => {
     const [ id, setId ] = useState<string>('')
     const [ password, setPassword ] = useState<string>('')
+
+    const history = useHistory()
+
+    const onLogin = () => {
+        teacherApi.postLogin(id, password)
+        .then((res) => {
+            localStorage.setItem('admin-access-token', res.data.access_token)
+            localStorage.setItem('admin-refresh-token', res.data.refresh_token)
+            history.push('/')
+        })
+        .catch((err) => {
+            console.log(err)
+        })
+    }
 
     return (
         <>
@@ -40,7 +60,7 @@ const LoginLeft = () => {
                         </S.Inter>
                     </S.LoginInputBox>
                     
-                    <S.Loginbutton>로그인</S.Loginbutton>
+                    <S.Loginbutton onClick={onLogin}>로그인</S.Loginbutton>
                     <hr/>
                 </S.InputWarpper>
             </S.LoginLeftWarpper>

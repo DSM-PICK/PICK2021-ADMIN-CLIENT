@@ -16,9 +16,9 @@ const AfterSchoolCard: FC<Props> = ({index}) => {
     <>
         <S.AfterSchoolCard>
           {
-            click === true ?
-            <AfterSchoolPerson index={index}/>
-            : <PersonSet index={index} />
+            !click ?
+            <AfterSchoolPerson index={index} isOpen={click} setIsOpen={setClick}/>
+            : <PersonSet index={index} isOpen={click} setIsOpen={setClick}/>
           }
             
         </S.AfterSchoolCard>

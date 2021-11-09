@@ -6,11 +6,11 @@ import AfterSchoolName from './AfterSchoolName/AfterSchoolName';
 import AfterSchoolSubBar from './AfterSchoolSubBar/AfterSchoolSubBar';
 import * as S from './styles'
 
-interface AfterSchoolProps {
+interface Props {
   id: string
 }
 
-const AfterSchoolInfo:FC<RouteComponentProps<AfterSchoolProps>> = ({match}) => {
+const AfterSchoolInfo:FC<RouteComponentProps<Props>> = ({match}) => {
   return (
     <>
         <AfterSchoolName />
@@ -25,7 +25,6 @@ const AfterSchoolInfo:FC<RouteComponentProps<AfterSchoolProps>> = ({match}) => {
             })
           }
         </S.CardWrapper>
-        <BasicModal />
     </>
   );
 }

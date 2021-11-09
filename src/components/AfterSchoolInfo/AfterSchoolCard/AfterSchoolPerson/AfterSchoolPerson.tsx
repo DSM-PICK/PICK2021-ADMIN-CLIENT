@@ -4,13 +4,20 @@ import { Crown } from '../../../../assets';
 import * as S from './styles'
 
 interface Props {
-    index: number
+    index: number,
+    isOpen: boolean,
+    setIsOpen: (open: boolean) => void
 }
 
-const AfterSchoolPerson: FC<Props> = ({index}) => {
+const AfterSchoolPerson: FC<Props> = ({index, isOpen, setIsOpen}) => {
+
+  const onClick = () => {
+    setIsOpen(!isOpen)
+  }
+  
   return (
     <>
-        <S.AfterSchoolPersonWrapper>
+        <S.AfterSchoolPersonWrapper onClick={onClick}>
             {
               index === 0 &&
               <img src={Crown} alt="동아리장" />

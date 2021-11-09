@@ -2,8 +2,9 @@ import styled from "@emotion/styled";
 import { color } from "../../../style/color";
 
 export const AfterSchoolCard = styled.div`
-    width: 280px;
+    width: 200px;
     height: 100px;
+    margin: 0 auto;
     margin-bottom: 20px;
     display: flex;
     flex-direction: column;

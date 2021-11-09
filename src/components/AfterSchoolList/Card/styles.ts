@@ -2,16 +2,21 @@ import styled from '@emotion/styled'
 import { color } from '../../../style/color'
 
 export const AfterSchoolCardWrapper = styled.div`
-    width: 360px;
-    height: 200px;
+    width: 280px;
+    height: 130px;
     background-color: ${color.white};
-    margin: 0 auto;
-    margin-bottom: 32px;
+    margin: 16px auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    cursor: pointer;
     color: black;
+    cursor: pointer;
+    transition: all 0.3s;
+    &:hover {
+        width: 300px;
+        height: 150px;
+        margin: 0 auto;
+    }
 `
 
 export const AfterSchoolDes = styled.div`
@@ -31,13 +36,13 @@ export const Line = styled.div`
 export const AfterSchoolName = styled.div`
     font-family: Noto Sans KR;
     font-style: normal;
-    font-size: 40px;
+    font-size: 24px;
     text-align: center;
 `
 
 export const AfterSchoolInfo = styled.div`
     font-family: Noto Sans KR;
     font-style: normal;
-    font-size: 24px;
+    font-size: 18px;
     text-align: center;
 `

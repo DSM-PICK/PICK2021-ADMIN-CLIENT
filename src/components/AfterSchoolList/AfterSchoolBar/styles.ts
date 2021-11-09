@@ -2,9 +2,10 @@ import styled from "@emotion/styled";
 import { color } from "../../../style/color";
 
 export const AfterSchoolBarWrapper = styled.div`
-    display: flex;
-    justify-content: right;
     margin-bottom: 32px;
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: 1fr;
 `
 
 export const AfterSchoolAdd = styled.div`
@@ -62,7 +63,7 @@ export const AfterSchoolSort = styled.div`
     justify-content: space-evenly;
     align-items: center;
     cursor: pointer;
-    margin-right: 16px;
+    margin-right: 32px;
     img{
         width: 30px;
         height: 30px;
