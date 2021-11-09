@@ -1,9 +1,8 @@
 import { idText } from 'typescript'
 import request from '../../axios'
-import { IChangeName, IChangePassword, ILogin, IRegister, IStudentSearch, ITeacherInfo } from '../../interface/teacher/TeacherType'
 
 export default {
-    postRegister({id, name, password, code}: IRegister){
+    postRegister(id : string, name: string, password: string, code: string){
         return request({
             url: '/teacher/register',
             method: 'post',
@@ -15,7 +14,7 @@ export default {
             }
         })
     },
-    postLogin({id, password} : ILogin){
+    postLogin(id: string, password: string){
         return request({
             url: '/teacher/login',
             method: 'post',
@@ -34,7 +33,7 @@ export default {
             }
         })
     },
-    patchChangePassword({password} : IChangePassword){
+    patchChangePassword(password : string){
         return request({
             url: '/teacher/password',
             method: 'patch',
@@ -46,7 +45,7 @@ export default {
             }
         })
     },
-    patchChangeName({name} : IChangeName){
+    patchChangeName(name: string){
         return request({
             url: '/teacher/name',
             method: 'patch',
@@ -68,7 +67,7 @@ export default {
             data : {}
         })
     },
-    getTeacherInfo({teacher_id} : ITeacherInfo){
+    getTeacherInfo(teacher_id : number){
         return request({
             url: `/teacher/${teacher_id}/information`,
             method: 'patch',
@@ -78,7 +77,7 @@ export default {
             data : {}
         })
     },
-    getStudentSearch({name} : IStudentSearch){
+    getStudentSearch(name : string){
         return request({
             url: `/teacher/student?name=${name}`,
             method: 'patch',
