@@ -1,12 +1,16 @@
-import React from 'react';
-import ClubMove from './ClubMove/ClubMove';
+import React, { FC } from 'react';
+import { ReactNode } from 'react';
 import * as S from './styles'
 
-const BasicModal = () => {
+interface Props {
+  children: ReactNode
+}
+
+const BasicModal: FC<Props> = ({children}) => {
   return (
     <>
         <S.BasicModalWrapper>
-            <ClubMove />
+            {children}
         </S.BasicModalWrapper>
     </>
   );
