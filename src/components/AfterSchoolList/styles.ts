@@ -6,18 +6,16 @@ export const AfterSchoolListWrapper = styled.div`
     flex-direction: column;
 `
 
-export const AfterSchoolList = styled.div`
-    height: 70vh;
+export const AfterSchoolListBox = styled.div`
+    height: 570px;
     overflow: auto;
     display: grid;
-    grid-template-columns: 392px 392px 392px 392px;
+    grid-template-columns: repeat(4, 350px);
+    place-items: center;
     @media screen and (max-width: 1600px) { 
-        grid-template-columns: 392px 392px 392px;
+        grid-template-columns: repeat(3, 350px);
     }
     @media screen and (max-width: 1340px) { 
-        grid-template-columns: 392px 392px;
-    }
-    a {
-        text-decoration: none;
+        grid-template-columns: repeat(3, 350px);
     }
 `
