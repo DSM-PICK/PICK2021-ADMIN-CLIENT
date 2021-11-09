@@ -7,7 +7,9 @@ const AccountManagement = () => {
   return (
     <>
         <S.AMWrapper>
+            <TeacherList/>
             <S.Line/>
+            <TeacherSetting/>
         </S.AMWrapper>
     </>
   );
