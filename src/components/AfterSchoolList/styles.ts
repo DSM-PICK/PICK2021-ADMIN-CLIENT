@@ -11,7 +11,7 @@ export const AfterSchoolListBox = styled.div`
     overflow: auto;
     display: grid;
     grid-template-columns: repeat(4, 350px);
-    place-items: center;
+    grid-auto-rows: 160px;
     @media screen and (max-width: 1600px) { 
         grid-template-columns: repeat(3, 350px);
     }
