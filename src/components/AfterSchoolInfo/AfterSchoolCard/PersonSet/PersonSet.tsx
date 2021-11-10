@@ -9,11 +9,9 @@ import * as S from './styles'
 
 interface Props {
     index: number,
-    isOpen: boolean,
-    setIsOpen: (open: boolean) => void
 }
 
-const PersonSet: FC<Props> = ({index, isOpen, setIsOpen}) => {
+const PersonSet: FC<Props> = ({index}) => {
     const [ data, setData ] = useRecoilState(asMoveState)
     const history = useHistory()
 
@@ -28,15 +26,11 @@ const PersonSet: FC<Props> = ({index, isOpen, setIsOpen}) => {
         history.goBack()
     }
 
-    const onClick = () => {
-        setIsOpen(!isOpen)
-    }
-
     return (
         <>
-            <S.PersonSetWrapper onClick={onClick}>
+            <S.PersonSetWrapper>
                 {
-                    index === 0 &&
+                    index !== 0 &&
                     <S.Card color={color.orange}>
                         <img src={Crown} alt="동아리장" />
                         <div>부장</div>
