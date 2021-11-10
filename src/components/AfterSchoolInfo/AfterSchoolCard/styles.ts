@@ -12,3 +12,10 @@ export const AfterSchoolCard = styled.div`
     text-align: center;
     background-color: ${color.white};
 `
+
+export const AfterBox = styled.div`
+    width: 200px;
+    height: 100px;
+    z-index: 1;
+    position: fixed;
+`
