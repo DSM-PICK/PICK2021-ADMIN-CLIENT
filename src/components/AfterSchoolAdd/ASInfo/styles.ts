@@ -1,17 +1,26 @@
 import styled from '@emotion/styled';
+import { color } from '../../../style/color';
 
 export const Wrapper = styled.div`
-    width: 1300px;
+    width: calc(100% - 50px);
+    margin: 0 auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-bottom: 1px solid black;
+    padding: 10px;
+    @media screen and (max-width: 1600px) { 
+        width: 1000px;
+    }
+    @media screen and (max-width: 1340px) { 
+        width: 700px;
+    }
 `
 export const Left = styled.div`
     width: 250px;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-left: 5px;
     input{
         width: 150px;
         background: none;
@@ -27,21 +36,16 @@ export const PeopleCount = styled.div`
     font-size: 18px;
 `
 
-export const Right = styled.div`
-    width: 250px;
-    height: 40px;
+export const ASAddButton = styled.div`
+    width: 120px;
+    height: 30px;
+    font-size: 20px;
     display: flex;
     align-items: center;
-    background-color: white;
-    input{
-        padding-left: 10px;
-        font-size: 18px;
-        width: 200px;
-        outline: none;
-        border: none;
-    }
-    img{
-        width: 30px;
-        height: 30px;
-    }
+    justify-content: center;
+    border: none;
+    border-radius: 20px;
+    color: white;
+    cursor: pointer;
+    background-color: ${color.orange};
 `
