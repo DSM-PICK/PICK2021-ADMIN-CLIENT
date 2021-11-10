@@ -12,13 +12,18 @@ interface Props{
 const AfterSchoolCard: FC<Props> = ({index}) => {
   const [ click, setClick] = useState<boolean>(false)
 
+  const onClick = () => {
+    setClick(!click)
+  }
+
   return (
     <>
         <S.AfterSchoolCard>
+          <S.AfterBox onClick={onClick}/>
           {
             !click ?
-            <AfterSchoolPerson index={index} isOpen={click} setIsOpen={setClick}/>
-            : <PersonSet index={index} isOpen={click} setIsOpen={setClick}/>
+            <AfterSchoolPerson index={index}/>
+            : <PersonSet index={index} />
           }
             
         </S.AfterSchoolCard>
