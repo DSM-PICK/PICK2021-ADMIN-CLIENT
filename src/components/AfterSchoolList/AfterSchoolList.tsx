@@ -4,9 +4,9 @@ import AfterSchoolCard from './Card/Card';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import * as S from './styles'
-import ClubMove from '../Container/Modal/AfterSchoolMove/AfterSchoolMove';
 import { useRecoilState } from 'recoil';
 import { asMoveState } from '../../recoil/asMoveState';
+import AfterSchoolMove from '../Container/Modal/AfterSchoolMove/AfterSchoolMove';
 
 const AfterSchoolList = ({ location, match } : RouteComponentProps<{type: string}>) => {
   const [ path, setPath ] = useState<string>('');
@@ -31,7 +31,7 @@ const AfterSchoolList = ({ location, match } : RouteComponentProps<{type: string
             <AfterSchoolBar />
             <S.AfterSchoolListBox>
                 {
-                    Array(19).fill(-1).map((_, index) => {
+                    Array(7).fill(-1).map((_, index) => {
                     return (
                       <div onClick={() => onGoAfterSchool(index)} key={index}>
                         <AfterSchoolCard/>
@@ -43,7 +43,7 @@ const AfterSchoolList = ({ location, match } : RouteComponentProps<{type: string
             </S.AfterSchoolListBox>
             {
               data.isChange===true && data.type === 'major' &&
-              <ClubMove />
+              <AfterSchoolMove />
             }
         </S.AfterSchoolListWrapper>
     </>
