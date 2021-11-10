@@ -3,14 +3,14 @@ import teacherApi from "../libs/api/teacher/teacherApi";
 
 export const studentState = atom({
     key: 'studentState',
-    default: []
+    default: ''
 })
 
 export const studentDataState = selector({
     key: 'studentDataState',
     get: async ({get}) => {
-        const gcn: any = get(studentState);
-        let list = await teacherApi.getStudentSearch(gcn)
+        const name: any = get(studentState);
+        let list = await teacherApi.getStudentSearch(name)
         .then((res) => {
             return res.data
         })
