@@ -7,6 +7,7 @@ export const CardWrapper = styled.div`
     justify-content: center;
     margin-top: 20px;
     grid-template-columns: repeat(6, 250px);
+    grid-auto-rows: 120px;
     @media screen and (max-width: 1600px) { 
         grid-template-columns: repeat(5, 250px);
     }
