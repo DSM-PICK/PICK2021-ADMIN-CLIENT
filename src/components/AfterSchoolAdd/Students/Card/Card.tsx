@@ -1,11 +1,17 @@
-import React from 'react';
+import React, { FC } from 'react';
 import * as S from './styles'
 
-const Card = () => {
+interface Props {
+  student_id: number,
+  gcn: string,
+  name: string
+}
+
+const Card: FC<Props> = ({student_id, gcn, name}) => {
   return (
     <>
         <S.CardWrpper>
-          2121 한준호
+          {gcn} {name}
         </S.CardWrpper>
     </>
   );
