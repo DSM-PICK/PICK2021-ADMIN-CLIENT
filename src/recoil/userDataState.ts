@@ -1,9 +1,20 @@
 import { atom , selector  } from "recoil";
 import teacherApi from "../libs/api/teacher/teacherApi";
 
+interface IStudentAddListState {
+    student_id: number,
+    gcn: string,
+    name: string
+}
+
 export const studentState = atom({
     key: 'studentState',
     default: ''
+})
+
+export const studentAddListState = atom<IStudentAddListState[]>({
+    key:'studentAddListState',
+    default: []
 })
 
 export const studentDataState = selector({
