@@ -1,12 +1,12 @@
-import { atom, selector, selectorFamily } from 'recoil'
+import { atom, selector } from 'recoil'
 import majorApi from '../libs/api/major/majorApi'
 
-interface majorState {
-    major_id: number,
-    major_name: string,
-    location_name: string,
-    head_name: string
-}
+// interface majorState {
+//     major_id: number,
+//     major_name: string,
+//     location_name: string,
+//     head_name: string
+// }
 
 export const majorListState = atom({
     key: 'majorListState',
