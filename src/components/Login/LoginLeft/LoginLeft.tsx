@@ -1,10 +1,6 @@
 import React, { useState } from 'react';
-import { useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
-import { useRecoilState, useRecoilValue, useSetRecoilState } from 'recoil';
-import majorApi from '../../../libs/api/major/majorApi';
 import teacherApi from '../../../libs/api/teacher/teacherApi';
-import { majorListSelector, majorListState } from '../../../recoil/majorState';
 import * as S from './styles'
 
 const LoginLeft = () => {
