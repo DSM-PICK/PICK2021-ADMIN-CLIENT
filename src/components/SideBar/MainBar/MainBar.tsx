@@ -1,7 +1,7 @@
 import React from 'react';
 import { FC } from 'react';
 import { Link, useHistory } from 'react-router-dom';
-import { Club, ClubOrange, Home, HomeOrange, LogOut, Upload, UploadOrange } from '../../../assets';
+import { Club, ClubOrange, LogOut, Upload, UploadOrange } from '../../../assets';
 import * as S from './styles'
 interface Props{
     url: string
