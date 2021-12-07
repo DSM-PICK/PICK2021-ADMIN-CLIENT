@@ -38,7 +38,3 @@ const TeacherList = () => {
 }
 
 export default TeacherList;
-
-function index(i: any, index: any): string | number | boolean | {} | React.ReactElement<any, string | React.JSXElementConstructor<any>> | React.ReactNodeArray | React.ReactPortal | null | undefined {
-    throw new Error('Function not implemented.');
-}
