@@ -1,8 +1,5 @@
-import React, { ReactComponentElement, ReactEventHandler } from 'react';
+import React from 'react';
 import { useState } from 'react';
-import { useRecoilValue } from 'recoil';
-import { Teacher } from '../../components/AccountManagement/TeacherList/styles';
-import { teacherDataState } from '../../recoil/userDataState';
 import * as S from './styles'
 
 const teacherList = [
