@@ -1,5 +1,4 @@
 import React from 'react';
-import { Search } from '../../../assets';
 import * as S from './styles'
 
 const ASInfo = () => {
