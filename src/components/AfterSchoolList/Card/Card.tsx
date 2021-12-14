@@ -1,15 +1,23 @@
 import React from 'react';
+import { FC } from 'react';
 import * as S from './styles'
 
-const Card = () => {
+interface Props {
+  id: number,
+  location: string,
+  asName: string
+  userName: string | number
+}
+
+const Card: FC<Props> = ({id, location, asName, userName}) => {
   return (
     <>
         <S.AfterSchoolCardWrapper>
-            <S.AfterSchoolName>SEMICOLON;</S.AfterSchoolName>
+            <S.AfterSchoolName>{asName}</S.AfterSchoolName>
             <S.AfterSchoolDes>
-                <S.AfterSchoolInfo>소프트웨어개발 2실</S.AfterSchoolInfo>
+                <S.AfterSchoolInfo>{location}</S.AfterSchoolInfo>
                 <S.Line/>
-                <S.AfterSchoolInfo>한준호</S.AfterSchoolInfo>
+                <S.AfterSchoolInfo>{userName}</S.AfterSchoolInfo>
             </S.AfterSchoolDes>
         </S.AfterSchoolCardWrapper>
     </>
