@@ -66,11 +66,11 @@ const AfterSchoolList = ({ location, match } : RouteComponentProps<{type: string
                 {
                     data.map((i, index) => {
                     return (
-                      <div onClick={() => onGoAfterSchool(index)} key={index}>
+                      <div onClick={() => onGoAfterSchool(index)} key={`${index}-${i.location_name}`}>
                         {
                           type === 'major' ?
-                          <AfterSchoolCard id={i.major_id} location={i.location_name} asName={i.major_name} userName={i.head_name}/>
-                          : <AfterSchoolCard id={i.after_school_id} location={i.location_name} asName={i.name} userName={i.teacher_id}/>
+                          <AfterSchoolCard type={type} id={i.major_id} location={i.location_name} asName={i.major_name} userName={i.head_name}/>
+                          : <AfterSchoolCard type={type} id={i.after_school_id} location={i.location_name} asName={i.name} userName={i.teacher_id}/>
                         }
                       </div>
                     )
