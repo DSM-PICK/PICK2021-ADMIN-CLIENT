@@ -10,7 +10,7 @@ export default {
             },
         })
     },
-    postMajorCreate(major_name: string, head_name: string, head_gcn: string, location_id: number, teacher_id: string){
+    postMajor(major_name: string, head_name: string, head_gcn: string, location_id: number, teacher_id: string){
         return request({
             url: '/major',
             method: 'post',
@@ -35,7 +35,7 @@ export default {
             }
         })
     },
-    postMajorAddMember(major_id: number, student_id: number){
+    postMajorMember(major_id: number, student_id: number){
         return request({
             url: '/major/member',
             method: 'post',
@@ -48,7 +48,7 @@ export default {
             }
         })
     },
-    deleteMajorDelMember(student_id: number){
+    deleteMajorStudent(student_id: number){
         return request({
             url: '/major/member',
             method: 'delete',
@@ -60,7 +60,7 @@ export default {
             }
         })
     },
-    patchMajorChangeHead(major_id: number, student_id: number){
+    patchMajorHead(major_id: number, student_id: number){
         return request({
             url: '/major/head',
             method: 'patch',
@@ -82,7 +82,7 @@ export default {
             }
         })
     },
-    patchMajorChangeName(major_id: number, major_name: string){
+    patchMajorName(major_id: number, major_name: string){
         return request({
             url: `/major/${major_id}`,
             method: 'patch',
@@ -105,11 +105,5 @@ export default {
                 location_id: location_id,
             }
         })
-    },
-    getTest(){
-        return request({
-            url: `https://jsonplaceholder.typicode.com/users`,
-            method: 'get',
-        })
-    },
+    }
 }

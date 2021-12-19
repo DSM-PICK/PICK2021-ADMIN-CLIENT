@@ -1,4 +1,3 @@
-import { idText } from 'typescript'
 import request from '../../axios'
 
 export default {

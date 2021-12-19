@@ -10,7 +10,7 @@ export default {
             }
         })
     },
-    postActivityCreate(name: string, teacher_id: string, location_id: number, day: string){
+    postActivity(name: string, teacher_id: string, location_id: number, day: string){
         return request({
             url: '/after-school',
             method: 'post',
@@ -25,7 +25,7 @@ export default {
             }
         })
     },
-    patchActivityChange(after_school_id: number, name?: string, teacher_id?: string, location_id?: number, day?: string){
+    patchActivity(after_school_id: number, name?: string, teacher_id?: string, location_id?: number, day?: string){
         return request({
             url: `/after-school/${after_school_id}`,
             method: 'post',
@@ -40,7 +40,7 @@ export default {
             }
         })
     },
-    deleteActivityDel(after_school_id: number){
+    deleteActivity(after_school_id: number){
         return request({
             url: `/after-school/${after_school_id}`,
             method: 'post',
@@ -49,7 +49,7 @@ export default {
             }
         })
     },
-    postActivityStudentAdd(after_school_id: number, student_id: number){
+    postActivityStudent(after_school_id: number, student_id: number){
         return request({
             url: `/after-school/${after_school_id}/student`,
             method: 'post',
@@ -61,7 +61,7 @@ export default {
             }
         })
     },
-    deleteActivityStudentDel(after_school_id: number, student_id: number){
+    deleteActivityStudent(after_school_id: number, student_id: number){
         return request({
             url: `/after-school/${after_school_id}/student`,
             method: 'post',
