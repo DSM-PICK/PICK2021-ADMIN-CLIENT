@@ -54,7 +54,7 @@ export const teacherInfoState = selector({
 
 export const teacherDataState = selector({
     key: 'teacherDataState',
-    get: async ({get}) => {
+    get: async () => {
         let list = await teacherApi.getTeacherList()
         .then((res) => {
             return res.data.teachers

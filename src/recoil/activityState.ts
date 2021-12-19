@@ -15,7 +15,7 @@ export const activityListState = atom({
 
 export const activitySelector = selector({
     key: 'majorListSeletor',
-    get: async ({get}) => {
+    get: async () => {
         let list = await activityApi.getActivityList()
         .then((res) => {
             return res.data;

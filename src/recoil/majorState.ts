@@ -15,7 +15,7 @@ export const majorListState = atom({
 
 export const majorListSelector = selector({
     key: 'majorListSeletor',
-    get: async ({get}) => {
+    get: async () => {
         let list = await majorApi.getMajorList()
         .then((res) => {
             return res.data;
