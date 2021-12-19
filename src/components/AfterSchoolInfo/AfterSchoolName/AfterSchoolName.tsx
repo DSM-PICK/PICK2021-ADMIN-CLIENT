@@ -1,15 +1,18 @@
 import React from 'react';
+import { useRecoilValue } from 'recoil';
+import { asInfoState } from '../../../recoil/asInfoState';
 import * as S from './styles'
 
 const AfterSchoolName = () => {
+  const asInfoData = useRecoilValue(asInfoState)
   return (
     <>
         <S.AfterSchoolNameWrapper>
             <S.AfterSchoolTitle>
-                PICK
+                {asInfoData.major_name}
             </S.AfterSchoolTitle>
             <S.AfterSchoolPlace>
-                정보보안 2실
+                {asInfoData.location_name}
             </S.AfterSchoolPlace>
         </S.AfterSchoolNameWrapper>
     </>
