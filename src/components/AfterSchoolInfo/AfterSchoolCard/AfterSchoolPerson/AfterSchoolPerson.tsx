@@ -4,10 +4,13 @@ import { Crown } from '../../../../assets';
 import * as S from './styles'
 
 interface Props {
-    index: number
+    index: number,
+    name: string,
+    id: number,
+    gcn: string
 }
 
-const AfterSchoolPerson: FC<Props> = ({index}) => {
+const AfterSchoolPerson: FC<Props> = ({index, name, id, gcn}) => {
   
   return (
     <>
@@ -16,7 +19,7 @@ const AfterSchoolPerson: FC<Props> = ({index}) => {
               index === 0 &&
               <img src={Crown} alt="동아리장" />
             }
-            <div>2121 한준호</div>
+            <div>{gcn} {name}</div>
         </S.AfterSchoolPersonWrapper>
     </>
   );
