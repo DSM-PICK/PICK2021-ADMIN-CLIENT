@@ -9,21 +9,27 @@ import * as S from './styles'
 
 interface Props {
     index: number,
+    id: number,
+    asId: number
 }
 
-const PersonSet: FC<Props> = ({index}) => {
-    const [ data, setData ] = useRecoilState(asMoveState)
+const PersonSet: FC<Props> = ({index, id, asId}) => {
+    const [ asMoveData, setAsMoveData ] = useRecoilState(asMoveState)
     const history = useHistory()
 
     const onChangeAs = () => {
-        setData({
-            ...data,
+        setAsMoveData({
+            ...asMoveData,
             isChange: true,
             studentId: index,
             nowAsName: 'semicolon',
             type: 'major'
         })
         history.goBack()
+    }
+
+    const onStudentDelete = () => {
+
     }
 
     return (
@@ -41,7 +47,7 @@ const PersonSet: FC<Props> = ({index}) => {
                     <div>이동</div>
                 </S.Card>
                 
-                <S.Card color={color.red}>
+                <S.Card color={color.red} onClick={onStudentDelete}>
                     <img src={Delete} alt="삭제" />
                     <div>삭제</div>
                 </S.Card>
