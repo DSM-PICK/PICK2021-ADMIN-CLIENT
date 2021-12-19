@@ -1,16 +1,21 @@
 import React, { FC } from 'react';
 import { useState } from 'react';
-import { Crown } from '../../../assets';
+import { useRecoilValue } from 'recoil';
+import { asInfoState } from '../../../recoil/asInfoState';
 import AfterSchoolPerson from './AfterSchoolPerson/AfterSchoolPerson';
 import PersonSet from './PersonSet/PersonSet';
 import * as S from './styles'
 
 interface Props{
-  index: number
+  index: number,
+  id: number,
+  name: string,
+  gcn: string
 }
 
-const AfterSchoolCard: FC<Props> = ({index}) => {
+const AfterSchoolCard: FC<Props> = ({index, name, id, gcn}) => {
   const [ click, setClick] = useState<boolean>(false)
+  const asInfoData = useRecoilValue(asInfoState)
 
   const onClick = () => {
     setClick(!click)
@@ -22,8 +27,8 @@ const AfterSchoolCard: FC<Props> = ({index}) => {
           <S.AfterBox onClick={onClick}/>
           {
             !click ?
-            <AfterSchoolPerson index={index}/>
-            : <PersonSet index={index} />
+            <AfterSchoolPerson index={index} id={id} name={name} gcn={gcn}/>
+            : <PersonSet index={index} id={id} asId={asInfoData.id}/>
           }
             
         </S.AfterSchoolCard>
