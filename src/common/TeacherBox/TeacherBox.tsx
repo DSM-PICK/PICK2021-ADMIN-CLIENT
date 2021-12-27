@@ -1,52 +1,39 @@
 import React from 'react';
+import { FC } from 'react';
 import { useState } from 'react';
-import * as S from './styles'
+import { useRecoilValue } from 'recoil';
+import { teacherDataState } from '../../recoil/userDataState';
+import BaseBox from '../Base/BaseBox/BaseBox';
 
-const teacherList = [
-    {
-        teacher_id: 'dsm00',
-        name: '아무개'
-    },
-    {
-        teacher_id: 'dsm01',
-        name: '아기개'
-    },
-    {
-        teacher_id: 'dsm02',
-        name: '아수개'
-    },
-    {
-        teacher_id: 'dsm03',
-        name: '아자개'
-    },
-    {
-        teacher_id: 'dsm04',
-        name: '아재개'
-    },
-    {
-        teacher_id: 'dsm05',
-        name: '아푸개'
-    }
-];
+interface Props {
+    setTeacherID: (e: string) => void
+}
 
-const TeacherBox = () => {
-    // const teacherList = useRecoilValue(teacherDataState);
+interface teacher {
+    name: string,
+    teacher_id: string
+}
+
+const TeacherBox: FC<Props> = ({setTeacherID, }) => {
     const [ option, setOption, ] = useState('choice')
+    const teacherData = useRecoilValue(teacherDataState)
+    console.log(teacherData)
 
     const handleSelect = (e: any) => {
-        setOption(e.target.value);
+        setTeacherID(e.target.value);
+        setOption(e.target.value)
     };
 
     return (
         <>
-            <S.TeacherBoxWrapper value={option} onChange={handleSelect}>
-                <S.Teacher key='choice' value='choice'>선택해주세요</S.Teacher>
+            <BaseBox option={option} handleSelect={handleSelect}>
+                <option key='choice' value='choice'>담당 선생님</option>
                 {
-                    teacherList.map((i: any, index: any) => {
-                        return <S.Teacher key={i.teacher_id} value={i.teacher_id}>{i.name}</S.Teacher>
+                    teacherData.map((i: teacher) => {
+                        return <option key={i.teacher_id} value={i.teacher_id}>{i.name}</option>
                     })
                 }
-            </S.TeacherBoxWrapper>
+            </BaseBox>
         </>
     );
 }
