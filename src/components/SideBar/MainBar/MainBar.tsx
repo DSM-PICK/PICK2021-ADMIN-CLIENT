@@ -1,7 +1,7 @@
 import React from 'react';
 import { FC } from 'react';
 import { Link, useHistory } from 'react-router-dom';
-import { Club, ClubOrange, LogOut, Upload, UploadOrange } from '../../../assets';
+import { Club, ClubOrange, LogOut, Upload, UploadOrange,ClubAdd, ClubAddOrange } from '../../../assets';
 import * as S from './styles'
 interface Props{
     url: string
@@ -26,6 +26,13 @@ const MainBar:FC<Props>= ({url}) => {
             <Link to="/as-list/activity">
                 <img src={url === '/as-list/activity' ? ClubOrange : Club} alt="동아리"/>
                 <S.SideBarText>방과후</S.SideBarText>
+            </Link>
+        </S.SideBarIconBox>
+
+        <S.SideBarIconBox>
+            <Link to="/add-after-school">
+                <img src={url === '/add-after-school' ? ClubAddOrange : ClubAdd} alt="동아리"/>
+                <S.SideBarText>추가하기</S.SideBarText>
             </Link>
         </S.SideBarIconBox>
 
