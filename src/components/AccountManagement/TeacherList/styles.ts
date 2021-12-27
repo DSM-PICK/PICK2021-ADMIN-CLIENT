@@ -14,7 +14,6 @@ export const TeacherListWrapper = styled.div`
 `
 
 export const TeacherListBox = styled.div`
-    margin-top: 20px;
     text-align: center;
     width: 100%;
     height: 450px;
@@ -32,6 +31,7 @@ export const Teacher = styled.p<{isActive: boolean}>`
     `
         width: 150px;
         margin: 0 auto;
+        margin-top: 20px;
         border-radius: 10px;
         color: white;
         background-color: ${color.orange};
