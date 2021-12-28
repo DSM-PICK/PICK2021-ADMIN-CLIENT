@@ -12,7 +12,7 @@ export const StudentBoxWrapper = styled.div`
     margin: 0 auto;
     background-color: white;
     text-align: center;
-    border-radius: 20px;
+    border-radius: 5px;
     box-shadow: 3px 3px 2px 1px rgba(0, 0, 0, 0.2);
     -ms-overflow-style: none;
     scrollbar-width: none;

@@ -1,36 +1,6 @@
 import { atom , selector  } from "recoil";
+import locationApi from "../libs/api/location/locationApi";
 import teacherApi from "../libs/api/teacher/teacherApi";
-
-interface IStudentAddListState {
-    student_id: number,
-    gcn: string,
-    name: string
-}
-
-export const studentState = atom({
-    key: 'studentState',
-    default: ''
-})
-
-export const studentAddListState = atom<IStudentAddListState[]>({
-    key:'studentAddListState',
-    default: []
-})
-
-export const studentDataState = selector({
-    key: 'studentDataState',
-    get: async ({get}) => {
-        const name: any = get(studentState);
-        let list = await teacherApi.getStudentSearch(name)
-        .then((res) => {
-            return res.data
-        })
-        .catch((err) => {
-            return err
-        })
-        return list
-    }
-})
 
 export const teacherState = atom<{teacher_id: string, teacher_name: string}>({
     key: 'teacherState',
@@ -64,6 +34,20 @@ export const teacherDataState = selector({
         })
         .catch((err) => {
             console.log(err.response?.status, 'asd')
+            return err
+        })
+        return list
+    }
+})
+
+export const locationListState = selector({
+    key: 'locationListState',
+    get: async () => {
+        let list = await locationApi.getLocationList()
+        .then((res) => {
+            return res.data
+        })
+        .catch((err) => {
             return err
         })
         return list
