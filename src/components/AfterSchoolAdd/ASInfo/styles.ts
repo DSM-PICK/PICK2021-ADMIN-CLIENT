@@ -16,7 +16,7 @@ export const Wrapper = styled.div`
     }
 `
 export const Left = styled.div`
-    width: 250px;
+    width: 200px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -32,6 +32,12 @@ export const Left = styled.div`
     }
 `
 
+export const Right = styled.div`
+    width: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+`
 export const PeopleCount = styled.div`
     font-size: 18px;
 `
