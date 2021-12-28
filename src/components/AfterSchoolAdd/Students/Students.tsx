@@ -1,6 +1,6 @@
 import React from 'react';
 import { useRecoilValue } from 'recoil';
-import { studentAddListState } from '../../../recoil/userDataState';
+import { studentAddListState } from '../../../recoil/asAddState';
 import AddCard from './AddCard/AddCard';
 import Card from './Card/Card';
 import * as S from './styles'
