@@ -4,12 +4,11 @@ import { teacherDataState, teacherState } from '../../../recoil/userDataState';
 import * as S from './styles'
 
 const TeacherList = () => {
-    const [ teaceherId , setTeacherId] = useRecoilState(teacherState);
+    const [ teaceherData , setTeacherData] = useRecoilState(teacherState);
     const teacherlist = useRecoilValue(teacherDataState);
-    console.log(teacherlist)
 
-    const onTeacherInfo = (teacher_id: string) => {
-        setTeacherId(teacher_id)
+    const onTeacherInfo = (teacher_id: string, teacher_name: string) => {
+        setTeacherData({ teacher_id: teacher_id, teacher_name: teacher_name})
     }
 
     return (
@@ -18,19 +17,12 @@ const TeacherList = () => {
                 <span>선생님 목록</span>
                 <S.TeacherListBox>
                     {
-                        Array(19).fill(-1).map((i,index) => {
+                        teacherlist.map((i: any) =>{
                             return (
-                                <S.Teacher key={i.id} isActive={index === 2} onClick={() => onTeacherInfo(i.teacher_id)}>i.name</S.Teacher>
+                                <S.Teacher key={i.id} isActive={i.teacher_id === teaceherData.teacher_id} onClick={() => onTeacherInfo(i.teacher_id, i.name)}>{i.name}</S.Teacher>
                             )
                         })
                     }
-                    {/* {
-                        teacherlist.map((i: any) =>{
-                            return (
-                                <S.Teacher key={i.id} isActive={i.teacher_id === teaceherId} onClick={() => onTeacherInfo(i.teacher_id)}>{i.name}</S.Teacher>
-                            )
-                        })
-                    } */}
                 </S.TeacherListBox>
             </S.TeacherListWrapper>
         </>

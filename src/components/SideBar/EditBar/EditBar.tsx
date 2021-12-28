@@ -18,10 +18,10 @@ const EditBar = () => {
             <img src={Edit} alt="수정"/>
             <S.EditBarText>편집</S.EditBarText>
         </S.EditBarIconBox>
-        <S.EditBarIconBoxLast>
+        <S.EditBarIconBox>
             <img src={Delete} alt="삭제" />
-            <div>삭제</div>
-        </S.EditBarIconBoxLast>
+            <S.EditBarText>삭제</S.EditBarText>
+        </S.EditBarIconBox>
     </>
   );
 }

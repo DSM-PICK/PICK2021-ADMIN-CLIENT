@@ -32,9 +32,12 @@ export const studentDataState = selector({
     }
 })
 
-export const teacherState = atom<string>({
+export const teacherState = atom<{teacher_id: string, teacher_name: string}>({
     key: 'teacherState',
-    default: ''
+    default: {
+        teacher_id: '0',
+        teacher_name: '홍길동'
+    }
 })
 
 export const teacherInfoState = selector({
@@ -57,9 +60,10 @@ export const teacherDataState = selector({
     get: async () => {
         let list = await teacherApi.getTeacherList()
         .then((res) => {
-            return res.data.teachers
+            return res.data
         })
         .catch((err) => {
+            console.log(err.response?.status, 'asd')
             return err
         })
         return list

@@ -1,7 +1,6 @@
 import React from 'react';
 import * as S from './styles'
-import { FC } from 'react';
-import { RouteComponentProps, useLocation } from 'react-router-dom';
+import {  useLocation } from 'react-router-dom';
 import MainBar from './MainBar/MainBar';
 import EditBar from './EditBar/EditBar';
 
@@ -14,7 +13,7 @@ const SideBar = () => {
         location.pathname !== '/login' ?
         <S.SideBarWrapper >
           {
-            location.pathname === '/major-info' || location.pathname === '/activity-info' ?
+            location.pathname.split('/')[1] === 'as-info' ?
             <EditBar />
             : <MainBar url={location.pathname}/>
           }
