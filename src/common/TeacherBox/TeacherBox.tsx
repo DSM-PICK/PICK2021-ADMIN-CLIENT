@@ -6,7 +6,7 @@ import { teacherDataState } from '../../recoil/userDataState';
 import BaseBox from '../Base/BaseBox/BaseBox';
 
 interface Props {
-    setTeacherID: (e: string) => void
+    setTeacherId: (e: string) => void
 }
 
 interface teacher {
@@ -14,20 +14,20 @@ interface teacher {
     teacher_id: string
 }
 
-const TeacherBox: FC<Props> = ({setTeacherID, }) => {
+const TeacherBox: FC<Props> = ({setTeacherId}) => {
     const [ option, setOption, ] = useState('choice')
     const teacherData = useRecoilValue(teacherDataState)
     console.log(teacherData)
 
     const handleSelect = (e: any) => {
-        setTeacherID(e.target.value);
+        setTeacherId(e.target.value);
         setOption(e.target.value)
     };
 
     return (
         <>
             <BaseBox option={option} handleSelect={handleSelect}>
-                <option key='choice' value='choice'>담당 선생님</option>
+                <option key='choice' value='choice' hidden>담당 선생님</option>
                 {
                     teacherData.map((i: teacher) => {
                         return <option key={i.teacher_id} value={i.teacher_id}>{i.name}</option>
