@@ -28,8 +28,12 @@ export const InfoBox = styled.div`
     :nth-of-type(2){
         flex: 2 1 0;
     }
+    span{
+        font-size: 21px;
+    }
     div{
         font-size: 21px;
+        cursor: pointer;
     }
     input {
         font-size: 21px;

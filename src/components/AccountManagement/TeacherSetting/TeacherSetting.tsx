@@ -41,10 +41,10 @@ const TeacherSetting = () => {
   const onTeacherInfoChange = (type: string) => {
     if(type === 'name'){
       teacherApi.patchChangeName(infoInput.name, infoInput.id)
-      .then(() => console.log('성공적으로 이름이 변경되었습니다.'))
+      .then(() => alert('성공적으로 이름이 변경되었습니다.'))
     } else {
       teacherApi.patchChangePassword(infoInput.password, infoInput.id)
-      .then(() => console.log('성공적으로 비밀변호가 변경되었습니다.'))
+      .then(() => alert('성공적으로 비밀변호가 변경되었습니다.'))
     }
   }
 
@@ -53,9 +53,9 @@ const TeacherSetting = () => {
         <S.TeacherSettingWrapper>
           <S.TeacherInfoBox>
               <S.InfoBox>
-                <div>NAME</div>
-                <div>ID</div>
-                <div>PASSWORD</div>
+                <span>NAME</span>
+                <span>ID</span>
+                <span>PASSWORD</span>
               </S.InfoBox>
               <S.InfoBox>
                 <input value={infoInput.name} onChange={onInfoChange} name="name" placeholder="변경한 이름을 입력해주세요"/>
