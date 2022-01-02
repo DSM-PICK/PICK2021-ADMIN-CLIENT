@@ -4,7 +4,7 @@ import AfterSchoolCard from './Card/Card';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import * as S from './styles'
-import { useRecoilState } from 'recoil';
+import { useRecoilValue } from 'recoil';
 import { asMoveState } from '../../recoil/asMoveState';
 import AfterSchoolMove from '../Container/Modal/AfterSchoolMove/AfterSchoolMove';
 import { useLayoutEffect } from 'react';
@@ -27,7 +27,7 @@ interface IActivity {
 
 const AfterSchoolList = ({ location, match } : RouteComponentProps<{type: string}>) => {
   const [ path, setPath ] = useState<string>('');
-  const [ moveData, setMoveData ] = useRecoilState(asMoveState)
+  const asMoveData = useRecoilValue(asMoveState)
   const [ data, setData ] = useState<any[]>([])
   const type = match.params.type;
 
@@ -52,12 +52,6 @@ const AfterSchoolList = ({ location, match } : RouteComponentProps<{type: string
     setPath(location.pathname.split('-')[0])
   }, [location])
 
-  const onGoAfterSchool = (index: number) => {
-    !moveData.isChange ?
-    history.push(`/as-info/${type}/${index}`)
-    : setMoveData({...moveData, afterAsId: index, afterAsName: 'pick'})
-  }  
-
   return (
     <>
         <S.AfterSchoolListWrapper>
@@ -66,11 +60,11 @@ const AfterSchoolList = ({ location, match } : RouteComponentProps<{type: string
                 {
                     data.map((i, index) => {
                     return (
-                      <div onClick={() => onGoAfterSchool(index)} key={`${index}-${i.location_name}`}>
+                      <div key={`${index}-${i.location_name}`}>
                         {
                           type === 'major' ?
-                          <AfterSchoolCard type={type} id={i.major_id} location={i.location_name} asName={i.major_name} userName={i.head_name}/>
-                          : <AfterSchoolCard type={type} id={i.after_school_id} location={i.location_name} asName={i.name} userName={i.teacher_id}/>
+                          <AfterSchoolCard type={type} asId={i.major_id} location={i.location_name} asName={i.major_name} userName={i.head_name}/>
+                          : <AfterSchoolCard type={type} asId={i.after_school_id} location={i.location_name} asName={i.name} userName={i.teacher_id}/>
                         }
                       </div>
                     )
@@ -79,7 +73,7 @@ const AfterSchoolList = ({ location, match } : RouteComponentProps<{type: string
                 }
             </S.AfterSchoolListBox>
             {
-              moveData.isChange === true && moveData.type === 'major' &&
+              asMoveData.isChange === true && asMoveData.type === type &&
               <AfterSchoolMove />
             }
         </S.AfterSchoolListWrapper>

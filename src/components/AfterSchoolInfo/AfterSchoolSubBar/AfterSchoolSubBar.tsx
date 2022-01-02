@@ -1,6 +1,6 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 import { useRecoilValue } from 'recoil';
-import { Search } from '../../../assets';
 import activityApi from '../../../libs/api/activity/activityApi';
 import majorApi from '../../../libs/api/major/majorApi';
 import { asInfoState } from '../../../recoil/asInfoState';
@@ -8,10 +8,15 @@ import * as S from './styles'
 
 const AfterSchoolSubBar = () => {
   const asInfoData = useRecoilValue(asInfoState)
+  const history = useHistory()
 
   const onASDelete = () => {
     if(asInfoData.type === 'major'){
       majorApi.deleteMajor(asInfoData.id)
+      .then(() => {
+        history.push(`/as-list/${asInfoData.type}`)
+        alert('동아리가 삭제되었습니다.')
+      })
     } else {
       activityApi.deleteActivity(asInfoData.id)
     }
@@ -21,14 +26,13 @@ const AfterSchoolSubBar = () => {
     <>
         <S.AfterSchoolSubBarWrapper>
             <S.ASInfoLeft>
-                <div>총원 : {asInfoData.count}명</div>
+              {
+                asInfoData.members &&
+                <div>총원 : {asInfoData.members.length}명</div>
+              }
                 <div>담당 : {asInfoData.teacher_name}</div>
             </S.ASInfoLeft>
             <S.ASInfoRight>
-              <S.StudentSearch>
-                  <input placeholder="학번 또는 이름"/>
-                  <button><img src={Search} alt='검색'/></button>
-              </S.StudentSearch>
               <S.ASButton>수정</S.ASButton>
               <S.ASButton onClick={onASDelete}>삭제</S.ASButton>
             </S.ASInfoRight>
