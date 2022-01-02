@@ -32,7 +32,7 @@ export default {
             }
         })
     },
-    patchChangePassword(password : string){
+    patchChangePassword(password : string, teacher_id: string){
         return request({
             url: '/teacher/password',
             method: 'patch',
@@ -40,11 +40,12 @@ export default {
                 Authorization: `Bearer ${localStorage.getItem('admin-access-token')}`
             },
             data: {
-                password: password
+                password: password,
+                teacher_id: teacher_id
             }
         })
     },
-    patchChangeName(name: string){
+    patchChangeName(name: string, teacher_id: string){
         return request({
             url: '/teacher/name',
             method: 'patch',
@@ -52,14 +53,15 @@ export default {
                 Authorization: `Bearer ${localStorage.getItem('admin-access-token')}`
             },
             data: {
-                name: name
+                name: name,
+                teacher_id: teacher_id
             }
         })
     },
     getTeacherList(){
         return request({
             url: '/teacher/list',
-            method: 'patch',
+            method: 'get',
             headers : {
                 Authorization: `Bearer ${localStorage.getItem('admin-access-token')}`
             },
@@ -79,7 +81,7 @@ export default {
     getStudentSearch(name : string){
         return request({
             url: `/teacher/student?name=${name}`,
-            method: 'patch',
+            method: 'get',
             headers : {
                 Authorization: `Bearer ${localStorage.getItem('admin-access-token')}`
             },
