@@ -29,7 +29,7 @@ export const ASInfoLeft = styled.div`
 `
 
 export const ASInfoRight = styled.div`
-    width: 430px;
+    width: 230px;
     display: flex;
     justify-content: space-between;
     align-items: center;
