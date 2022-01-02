@@ -1,6 +1,7 @@
 import React from 'react';
 import { useRecoilState } from 'recoil';
 import { Arrow } from '../../../../assets';
+import majorApi from '../../../../libs/api/major/majorApi';
 import { asMoveState } from '../../../../recoil/asMoveState';
 import BasicModal from '../BasicModal';
 import * as S from './styles'
@@ -9,10 +10,24 @@ const AfterSchoolMove = () => {
   const [data, setData] = useRecoilState(asMoveState);
 
   const onChangeAs = () => {
-    console.log('변경완료')
+    console.log(data)
+    if(data.type === 'major'){
+      majorApi.deleteMajorStudent(Number(data.studentId))
+      .then(() => {
+        majorApi.postMajorMember(data.afterAsId, Number(data.studentId))
+        .then(() => {
+          alert('성공적으로 이동이 완료되었습니다.')
+          onInitData()
+        })
+      })
+    }
   }
 
   const onCancel = () => {
+    onInitData()
+  }
+
+  const onInitData = () => {
     setData({
       isChange: false,
       nowAsName: '',
@@ -37,7 +52,7 @@ const AfterSchoolMove = () => {
                   <div>{data.afterAsName}</div>
               </S.ASDes>
               <S.ASButtonBox>
-                <S.Button onClick={onChangeAs}>수정</S.Button>
+                <S.Button onClick={onChangeAs}>이동</S.Button>
                 <S.Button onClick={onCancel}>취소</S.Button>
               </S.ASButtonBox>
           </S.ASMoveWrapper>
