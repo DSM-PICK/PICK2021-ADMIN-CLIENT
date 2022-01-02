@@ -1,8 +1,8 @@
-import React, { FC } from 'react';
+import React, { FC, useEffect } from 'react';
 import { useState } from 'react';
-import { useLayoutEffect } from 'react';
 import { RouteComponentProps } from 'react-router-dom';
 import { useRecoilState } from 'recoil';
+import Loading from '../../common/Loading/Loading';
 import majorApi from '../../libs/api/major/majorApi';
 import { asInfoState } from '../../recoil/asInfoState';
 import AfterSchoolCard from './AfterSchoolCard/AfterSchoolCard';
@@ -16,19 +16,22 @@ interface Props {
 }
 
 const AfterSchoolInfo:FC<RouteComponentProps<Props>> = ({match}) => {
-  const [ asInfoData, setASInfoData ] = useRecoilState(asInfoState)
+  const [ asInfoData, setAsInfoData ] = useRecoilState(asInfoState)
+  const [ loading, setLoading ] = useState(true);
   const type = match.params.type;
   const id = match.params.id;
 
-  useLayoutEffect(() => {
+  useEffect(() => {
+    setLoading(true)
     if(type === 'major'){
       majorApi.getMajorInfo(id)
       .then((res) => {
-        setASInfoData({...res.data, type: type, id: id})
+        console.log(res.data)
+        setAsInfoData({...res.data, type: type, id: id})
+        setLoading(false)
       })
     }
-  })
-
+  },[id, type])
 
   return (
     <>
@@ -37,9 +40,10 @@ const AfterSchoolInfo:FC<RouteComponentProps<Props>> = ({match}) => {
         <hr />
         <S.CardWrapper>
           {
-            asInfoData.members.map((i: any,index: number) => {
+            loading ? <Loading/>
+            : asInfoData.members.map((i: any,index: number) => {
               return (
-                <AfterSchoolCard key={index} index={index} id={i.student_id} name={i.student_name} gcn={i.gcn}/>
+                <AfterSchoolCard asId={id} type={type} key={index} index={index} id={i.student_id} name={i.student_name} gcn={i.gcn}/>
               )
             })
           }

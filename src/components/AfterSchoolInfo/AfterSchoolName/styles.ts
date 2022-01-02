@@ -9,7 +9,7 @@ export const AfterSchoolTitle = styled.div`
     font-family: Noto Sans KR;
     font-style: normal;
     font-weight: 500;
-    font-size: 72px;
+    font-size: 54px;
     line-height: 50px;
     margin-top: 100px;
 `
