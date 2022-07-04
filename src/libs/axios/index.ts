@@ -19,7 +19,7 @@ instance.interceptors.response.use(
   },
   async error => {
     const { config, response } = error;
-    if (response.status === 401 && localStorage.getItem('admin-refresh-token')) {
+    if (response.status === 401 && localStorage.getItem('admin-refresh-token') || response.statusCode === 401) {
       try {
         const res = await axios({
           method: 'put',
