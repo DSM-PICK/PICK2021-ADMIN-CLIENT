@@ -10,7 +10,7 @@ export default {
             },
         })
     },
-    postMajor(major_name: string, head_name: string, head_gcn: string, location_id: number, teacher_id: string){
+    postMajor(major_name: string, head_name: string, head_gcn: string, location_id: number = 1, teacher_id: string){
         return request({
             url: '/major',
             method: 'post',
@@ -22,7 +22,7 @@ export default {
                 head_name: head_name,
                 head_gcn: head_gcn,
                 location_id: location_id,
-                teacher_id:teacher_id
+                teacher_id: teacher_id
             }
         })
     },
@@ -94,7 +94,7 @@ export default {
             }
         })
     },
-    patchMajorChangeLocation(major_id: number, location_id: number){
+    patchMajorLocation(major_id: number, location_id: number){
         return request({
             url: `/major/${major_id}/location`,
             method: 'patch',
