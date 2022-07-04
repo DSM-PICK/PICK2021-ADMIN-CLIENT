@@ -15,14 +15,14 @@ export const AfterSchoolSubBarWrapper = styled.div`
 `
 
 export const ASInfoLeft = styled.div`
-    width: 250px;
+    width: 220px;
     display: flex;
     justify-content: space-between;
     div{
         font-family: Noto Sans KR;
         font-style: normal;
         font-weight: normal;
-        font-size: 22px;
+        font-size: 18px;
         display: flex;
         align-items: center;
     }
