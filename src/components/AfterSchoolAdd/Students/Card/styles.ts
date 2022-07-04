@@ -12,4 +12,5 @@ export const CardWrpper = styled.div`
     align-items: center;
     background-color: ${color.white};
     font-size: 24px;
+    cursor: pointer;
 `
