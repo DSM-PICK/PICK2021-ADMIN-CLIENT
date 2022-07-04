@@ -1,21 +1,28 @@
 import React from 'react';
 import { FC } from 'react';
 import { useHistory } from 'react-router-dom';
+import { useRecoilState } from 'recoil';
+import { asMoveState } from '../../../recoil/asMoveState';
 import * as S from './styles'
 
 interface Props {
-  id: number,
   location: string,
   asName: string
   userName: string | number
-  type: string
+  type: string,
+  asId: number
 }
 
-const Card: FC<Props> = ({id, location, asName, userName, type}) => {
+const Card: FC<Props> = ({asId, location, asName, userName, type}) => {
   const history = useHistory()
+  const [asMoveData, setAsMoveData] = useRecoilState(asMoveState);
 
   const onASInfo = () => {
-    history.push(`/as-info/${type}/${id}`)
+    if(!asMoveData.isChange) {
+      history.push(`/as-info/${type}/${asId}`)
+    } else {
+      setAsMoveData({...asMoveData, afterAsId: asId, afterAsName: asName})
+    }
   }
 
   return (
