@@ -26,3 +26,8 @@ export const activitySelector = selector({
         return list
     },
 })
+
+export const activityInfoState = atom({
+    key: 'activityInfoState',
+    default: []
+})
