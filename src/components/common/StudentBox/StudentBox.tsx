@@ -34,7 +34,7 @@ const StudentBox: FC<Props> = ({ student, setStudentTemp }) => {
   return (
     <>
       <S.StudentBoxWrapper>
-        {filterData.map((i: any, idx: any) => {
+        {studentData.map((i: any, idx: any) => {
           return (
             <S.StudentName
               key={i.id}
