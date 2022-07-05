@@ -20,7 +20,10 @@ const AfterSchoolSubBar = () => {
         alert('동아리가 삭제되었습니다.')
       })
     } else {
-      activityApi.deleteActivity(asInfoData.id)
+      activityApi.deleteActivity(asInfoData.id).then(() => {
+        history.push(`/as-list/${asInfoData.type}`)
+        alert('동아리가 삭제되었습니다.')
+      })
     }
   }
 
