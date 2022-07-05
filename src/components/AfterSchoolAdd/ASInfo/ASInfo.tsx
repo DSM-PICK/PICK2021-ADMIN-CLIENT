@@ -83,12 +83,15 @@ const ASInfo = () => {
       if (!data.name || data.location_id === -1 || !data.teacher_id) {
         return alert('빈칸을 다 채워주세요.')
       }
+      if (studentAddList === []) {
+        return alert('학생을 추가해주세요')
+      }
       setLoading(true)
       majorApi
         .postMajor(
           data.name,
-          studentAddList[0].name,
-          studentAddList[0].gcn,
+          studentAddList[0]?.name,
+          studentAddList[0]?.gcn,
           Number(data.location_id),
           data.teacher_id
         )
@@ -106,6 +109,12 @@ const ASInfo = () => {
               })
           })
         })
+        .catch((e) => {
+          if (e.response.status === 409) {
+            alert('해당 장소에 방과후가 있습니다.')
+            setLoading(false)
+          }
+        })
     } else if (type === 'activity') {
       if (
         !data.name ||
@@ -119,7 +128,7 @@ const ASInfo = () => {
       activityApi
         .postActivity(data.name, data.teacher_id, data.location_id, data.day)
         .then((res) => {
-          studentAddList.map((i: any, index: number) => {
+          studentAddList?.map((i: any, index: number) => {
             activityApi
               .postActivityStudent(res.data.after_school_id, i.studnet_id)
               .then(() => {
@@ -130,6 +139,12 @@ const ASInfo = () => {
                 }
               })
           })
+        })
+        .catch((e) => {
+          if (e.response.status === 409) {
+            alert('해당 장소에 방과후가 있습니다.')
+            setLoading(false)
+          }
         })
     }
   }
