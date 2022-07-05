@@ -23,13 +23,17 @@ const AfterSchoolName = () => {
     })
   }
 
+  const isMajor = () => {
+    return asInfoData.type === 'major'
+      ? asInfoData.major_name
+      : asInfoData.after_school_name
+  }
+
   return (
     <>
       <S.AfterSchoolNameWrapper>
         <S.AfterSchoolTitle
-          value={
-            !asModifyData.isModity ? asInfoData.major_name : asModifyData.title
-          }
+          value={!asModifyData.isModity ? isMajor() : asModifyData.title}
           disabled={!asModifyData.isModity}
           onChange={onTitleChange}
         />
