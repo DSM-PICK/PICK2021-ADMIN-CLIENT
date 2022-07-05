@@ -9,6 +9,7 @@ import AfterSchoolCard from './AfterSchoolCard/AfterSchoolCard'
 import AfterSchoolName from './AfterSchoolName/AfterSchoolName'
 import AfterSchoolSubBar from './AfterSchoolSubBar/AfterSchoolSubBar'
 import * as S from './styles'
+import activityApi from '../../libs/api/activity/activityApi'
 
 interface Props {
   type: string
@@ -25,6 +26,13 @@ const AfterSchoolInfo: FC<RouteComponentProps<Props>> = ({ match }) => {
     setLoading(true)
     if (type === 'major') {
       majorApi.getMajorInfo(id).then((res) => {
+        console.log(res.data)
+        setAsInfoData({ ...res.data, type: type, id: id })
+        setLoading(false)
+      })
+    }
+    if (type === 'activity') {
+      activityApi.getActivityInfo(id).then((res) => {
         console.log(res.data)
         setAsInfoData({ ...res.data, type: type, id: id })
         setLoading(false)
